@@ -1,0 +1,11 @@
+dist/*
+!dist/index.html
+!dist/favicon
+!dist/manifest.json
+!dist/browserconfig.xml
+/.npmrc
+coverage/*
+node_modules
+npm-debug.log
+.idea
+*.iml
