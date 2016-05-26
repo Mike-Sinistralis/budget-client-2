@@ -1,0 +1,15 @@
+{
+  "env": {
+    "mocha": true
+  },
+  "globals": {
+    "assert": true,
+    "expect": true
+  },
+  "plugins": [
+    "mocha"
+  ],
+  "rules": {
+    "no-param-reassign": [2, {"props": false}]
+  }
+}
