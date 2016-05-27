@@ -1,22 +1,18 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import { routerReducer as routing } from 'react-router-redux';
+import { routerMiddleware } from 'react-router-redux';
 
-import { reducer as app } from '../reducers/app';
 import sagas from '../sagas';
+import hashHistory from './getHistory';
+import rootReducer from '../reducers';
 
 const sagaMiddleware = createSagaMiddleware();
-
-const rootReducer = combineReducers({
-  app,
-  routing,
-});
-
+const historyMiddleware = routerMiddleware(hashHistory);
 
 const store = createStore(
   rootReducer,
   {},
-  applyMiddleware(sagaMiddleware)
+  applyMiddleware(sagaMiddleware, historyMiddleware)
 );
 
 sagas.map((saga) => sagaMiddleware.run(saga));
