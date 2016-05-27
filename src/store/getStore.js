@@ -1,3 +1,5 @@
 import initializedStore from './setStore';
 
-export const store = initializedStore;
+const store = initializedStore;
+
+export default store;

@@ -3,6 +3,7 @@ import createSagaMiddleware from 'redux-saga';
 import perf from 'react-addons-perf';
 import * as lodash from 'lodash';
 import * as immutable from 'immutable';
+import { routerReducer as routing } from 'react-router-redux';
 
 import DevTools from '../Containers/DevTools';
 import { reducer as app } from '../reducers/app';
@@ -12,6 +13,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = combineReducers({
   app,
+  routing,
 });
 
 
