@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-function Bar(props) {
+function Bar() {
   return (
     <div>
       <span>This is Bar</span>
