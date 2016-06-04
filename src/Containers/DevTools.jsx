@@ -10,7 +10,7 @@ const immutableSelect = (state = {}) => fromJS(state).toJS();
 const DevTools = createDevTools(
   <DockMonitor
     toggleVisibilityKey="ctrl-h"
-    changePositionKey="ctrl-w"
+    changePositionKey="ctrl-z"
     defaultIsVisible={false}
   >
     <FilterMonitor
