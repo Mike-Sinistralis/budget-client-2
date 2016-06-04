@@ -19,7 +19,7 @@ function AppRouter() {
       <Route path="/" component={App}>
         <IndexRoute component={Index} />
         <Route path="dashboard" component={Dashboard} />
-        <Route path="myAccount" component={Account} />
+        <Route path="account" component={Account} />
       </Route>
     </Router>
   );
