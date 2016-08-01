@@ -78,23 +78,30 @@ const headers = {
   Accept: 'application/json; charset=utf8',
 };
 
-window.postBudget = window.lodash.curry(baseApi, 3)('http://localhost:3110', {
+const andCountingApi = window.lodash.curry(baseApi, 3)('http://localhost:3110');
+
+window.postBudget = andCountingApi({
   method: 'POST',
   headers,
 });
 
-window.getBudget = window.lodash.curry(baseApi, 3)('http://localhost:3110', {
+window.getBudget = andCountingApi({
   method: 'GET',
   headers,
 });
 
-window.removeBudget = window.lodash.curry(baseApi, 3)('http://localhost:3110', {
+window.removeBudget = andCountingApi({
   method: 'DELETE',
   headers,
 });
 
-window.updateBudget = window.lodash.curry(baseApi, 3)('http://localhost:3110', {
+window.updateBudget = andCountingApi({
   method: 'PUT',
+  headers,
+});
+
+window.testFacebook = andCountingApi({
+  method: 'GET',
   headers,
 });
 

@@ -6,7 +6,6 @@ import * as immutable from 'immutable';
 // TODO: Remove push once we learn it better and use it in a few spots.
 import { routerMiddleware, push } from 'react-router-redux';
 
-import DevTools from '../Containers/DevTools';
 import sagas from '../sagas';
 import hashHistory from './getHistory';
 import rootReducer from '../reducers';
@@ -19,7 +18,7 @@ const store = createStore(
   {},
   compose(
     applyMiddleware(sagaMiddleware, historyMiddleware),
-    window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument({ maxAge: 20 })
+    window.devToolsExtension ? window.devToolsExtension() : false
   )
 );
 
